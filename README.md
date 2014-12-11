@@ -13,10 +13,10 @@ Audit custom events such as:
 
 ```json
 {
-  type: 'Info',
-  message: 'Create chart',
-  owner: false,
-  created_at: 'Thu Dec 11 2014 20:28:44 GMT+0300 (MSK)',
-  _id: 'gxftndeejfC2rHv4f'
+  "type": "Info",
+  "message": "Create chart",
+  "owner": false,
+  "created_at": "ThuDec11201420: 28: 44GMT+0300(MSK)",
+  "_id": "gxftndeejfC2rHv4f"
 }
 ```
