@@ -1,6 +1,6 @@
 Package.describe({
   name: 'laboratory:meteor-custom-audit',
-  summary: ' Audit custom events such as `Info: User login` ',
+  summary: 'Audit custom events',
   version: '1.0.0',
   git: 'https://github.com/Laboratory/meteor-custom-audit.git'
 });
