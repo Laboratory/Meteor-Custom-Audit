@@ -1,5 +1,6 @@
 meteor-custom-audit
 ===================
+https://atmospherejs.com/laboratory/meteor-custom-audit
 
 Audit custom events such as:
 
