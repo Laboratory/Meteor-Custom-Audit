@@ -5,28 +5,21 @@
   constructor: (collectionName = 'AuditLog') ->
     @_collection = new Meteor.Collection collectionName
 
-  _log: (type, message) ->
-    unless message?
-      message = type
-      type = @defaultType
-
-    @_collection.insert
+  _log: (type, message, options = {}) ->
+    @_collection.insert _.extend options,
       type: type
       message: message
       owner: Meteor?.user?().username?
       created_at: Date()
 
-  Error: (message) ->
-    @_log 'Error', message
+  Error: (message, options) ->
+    @_log 'Error', message, options
 
-  Info: (message) ->
-    @_log 'Info', message
+  Info: (message, options) ->
+    @_log 'Info', message, options
 
-  Warn: (message) ->
-    @_log 'Warning', message
+  Warn: (message, options) ->
+    @_log 'Warning', message, options
 
-  Fatal: (message) ->
-    @_log 'Fatal', message
-
-  Log: (message) ->
-    @_log message
+  Fatal: (message, options) ->
+    @_log 'Fatal', message, options

@@ -2,7 +2,10 @@ Tinytest.add 'Save log to Mongo', (test) ->
 
   testTypeMessage = (type) ->
     message = "#{type} message - " + Math.random()
-    Audit[type] message
+    options = {}
+    randomField = "Random: #{Math.floor(Math.random()*100)}"
+    options[randomField] = randomField
+    Audit[type] message, options
     cursor = Audit._collection.find
       message: message
 
@@ -13,9 +16,9 @@ Tinytest.add 'Save log to Mongo', (test) ->
     type = 'Warning' if type is 'Warn'
     type = 'Info' if type is 'Log'
     test.equal type, m.type
+    test.equal randomField, m[randomField]
 
   testTypeMessage 'Error'
   testTypeMessage 'Info'
   testTypeMessage 'Warn'
   testTypeMessage 'Fatal'
-  testTypeMessage 'Log'
