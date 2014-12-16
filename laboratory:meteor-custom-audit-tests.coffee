@@ -12,7 +12,6 @@ Tinytest.add 'Save log to Mongo', (test) ->
     m = cursor.fetch()[0]
     test.equal message, m.message
     test.isNotNull m.created_at
-    test.isNotNull m.owner
     type = 'Warning' if type is 'Warn'
     type = 'Info' if type is 'Log'
     test.equal type, m.type
