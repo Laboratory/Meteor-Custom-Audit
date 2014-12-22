@@ -1,12 +1,12 @@
 Package.describe({
   name: 'laboratory:meteor-custom-audit',
   summary: 'Audit custom events',
-  version: '1.0.2',
+  version: '1.0.3',
   git: 'https://github.com/Laboratory/meteor-custom-audit.git'
 });
 
 Package.onUse(function (api) {
-  api.versionsFrom('1.0.2');
+  api.versionsFrom('1.0.3');
   api.use('mongo');
   api.use('coffeescript', ['client', 'server']);
   api.addFiles('laboratory:meteor-custom-audit.coffee');
