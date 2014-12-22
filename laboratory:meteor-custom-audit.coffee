@@ -9,7 +9,6 @@
     @_collection.insert _.extend options,
       type: type
       message: message
-      owner: Meteor?.user?()?.username
       created_at: Date()
 
   Error: (message, options) ->
